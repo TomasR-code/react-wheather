@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import Paper from '@material-ui/core/Paper'; /* realse para que muestre sombras */
+import AppBar from '@material-ui/core/AppBar';
+import Typography from '@material-ui/core/Typography';
+import ToolBar from '@material-ui/core/Toolbar';
+import { Grid, Col, Row } from 'react-flexbox-grid';
 import LocationList from './components/LocationList';
 import './App.css';
 
@@ -10,6 +15,7 @@ const cities = [
     'Madrid,es',
 ]
 
+
 class App extends Component {
 
     handleSelectedLocation = city => {
@@ -17,10 +23,28 @@ class App extends Component {
     }
     render() {
         return (
-                <div className="App" >
-                    <LocationList cities={cities}
-                    onSelectedLocation={this.handleSelectedLocation}></LocationList>
-                </div>
+            <Grid>
+                <Row>
+                    <AppBar position='sticky'>
+                        <ToolBar>
+                            <Typography variante='title' color='inherit'>
+                                Weather App
+                            </Typography>
+                        </ToolBar>
+                    </AppBar>
+                </Row>
+                <Row>
+                    <Col xs={12} md={6}>
+                        <LocationList
+                            cities={cities}
+                            onSelectedLocation={this.handleSelectedLocation}>
+                        </LocationList>
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <div className="details"></div>
+                    </Col>
+                </Row>
+            </Grid>
         );
     }
 }
