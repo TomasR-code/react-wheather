@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import ToolBar from '@material-ui/core/Toolbar';
 import { Grid, Col, Row } from 'react-flexbox-grid';
 import LocationList from './components/LocationList';
+import ForecastExtended from './components/ForecastExtended';
 import './App.css';
 
 const cities = [
@@ -41,7 +42,11 @@ class App extends Component {
                         </LocationList>
                     </Col>
                     <Col xs={12} md={6}>
-                        <div className="details"></div>
+                        <Paper zDepth={4}>
+                            <div className="detail">
+                                <ForecastExtended></ForecastExtended>
+                            </div>
+                        </Paper>
                     </Col>
                 </Row>
             </Grid>

@@ -17,7 +17,7 @@ const icons = {
     [SUN]: "day-sunny",
     [RAIN]: "rain",
     [SNOW]: "snow",
-    [THUNDER]: "day-thunderstore",
+    [THUNDER]: "day-thunderstorm",
     [DRIZZLE]: "day-showers",
 };
 
@@ -26,18 +26,22 @@ const getWeatherIcon = (weatherState) => {
     const sizeIcon = "4x";
 
     if (icon)
-        return <WeatherIcons className="wicon" name={icon} size={sizeIcon} />;
+        return <WeatherIcons className="wicon"
+            name={icon}
+            size={sizeIcon}
+        />;
     else
-        return <WeatherIcons className="wicon" name={"day-sunny"} size={sizeIcon} />;
+        return <WeatherIcons className="wicon"
+            name={"day-sunny"}
+            size={sizeIcon}
+        />;
 };
 
 const WeatherTemperature = ({ temperature, weatherState }) => (
-    <div className="weatherTemperatureCont">
-        {
-            getWeatherIcon(weatherState)
-        }
-        <span className="temperature">{`${temperature}`}</span>
-        <span className="temperatureType">{` C°`}</span>
+    <div className="weatherTemperatureCont" > {
+        getWeatherIcon(weatherState)
+    } <span className="temperature" > {`${temperature}`} </span>
+        <span className="temperatureType" > {` C°`} </span>
     </div>
 );
 
