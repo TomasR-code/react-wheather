@@ -16,12 +16,11 @@ const cities = [
     'Madrid,es',
 ]
 
-
 class App extends Component {
 
     constructor() {
         super();
-        this.state = { city: 'Nueva Ciudad' };
+        this.state = { city: null };
     }
 
     handleSelectedLocation = city => {
@@ -49,9 +48,13 @@ class App extends Component {
                         </LocationList>
                     </Col>
                     <Col xs={12} md={6}>
-                        <Paper zDepth={4}>
+                        <Paper elevation={4}>
                             <div className="detail">
-                                <ForecastExtended city={city}></ForecastExtended>
+                                {/* city = null */
+                                    !city ?
+                                        null :
+                                        <ForecastExtended city={city}></ForecastExtended>
+                                }
                             </div>
                         </Paper>
                     </Col>

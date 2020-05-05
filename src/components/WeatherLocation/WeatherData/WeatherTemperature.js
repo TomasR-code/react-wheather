@@ -8,7 +8,7 @@ import {
     SNOW,
     THUNDER,
     DRIZZLE,
-} from './../../constants/weather';
+} from '../../../constants/weather';
 import './styles.css';
 
 

@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 import getUrlWeatherByCity from './../../services/getUrlWeatherByCity';
 import transformWeather from './../../services/tranformWeather';
 import Location from './Location';
-import WeatherData from './../WeatherData';
+import WeatherData from './WeatherData';
 import './styles.css';
 
 class WeatherLocation extends Component {
